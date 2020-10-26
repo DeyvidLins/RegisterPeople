@@ -39,13 +39,6 @@ namespace CadastroPessoas.Controllers
         [HttpPost]
         public async Task<IActionResult> CriarTelefone(Telefone telefone) //Realiza um create no Banco de dados
         {
-            if (telefone.tipo=="Celular")
-            {
-                ViewBag.limite = 11;
-            }else if (telefone.tipo == "Fixo")
-            {
-                ViewBag.limite = 10;
-            }
             if (string.IsNullOrEmpty(telefone.numero))// Verifica se o campo está vazio
                 ModelState.AddModelError("numero", "Campo numero: preenchimento obrigatório.");
 

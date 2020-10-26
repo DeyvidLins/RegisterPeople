@@ -23,16 +23,23 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr id="telefone-@item.id">
+        <tr id="telefone-@item.id">
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.numero)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.tipo)
-                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo)
+            </td>
+            <td>
+            <td>
 
-            </tr>
+                <a class="btn btn-success" asp-action="AtualizarTelefone" asp-route-id="@item.id">Atualizar</a>
+                <a class="btn btn-danger" asp-action="ExcluirTelefone" asp-route-id="@item.id">Excluir</a>
+              
+            </td>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

@@ -5,42 +5,43 @@
 }
 
      
-
 <hr />
 <div class="row">
     <div class="col-md-4">
+
+       
         <form asp-action="CriarTelefone">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="numero" class="control-label"></label>
-                <input asp-for="numero" class="form-control" maxlength="@ViewBag.limite" />                
+                <input asp-for="numero" class="form-control" maxlength="11" />
                 <span asp-validation-for="numero" class="text-danger"></span>
             </div>
-            <div class="form-group">
-            <label class="texto">Tipo:</label>
+             <div class="form-group">
+            <label class="texto">Tipo de Telefone:</label>
             <select name="tipo" class="form-control">
-                <option selected value="">Selecione...</option>           
-                <option  value="Celular">Celular</option>
-                <option  value="Fixo">Fixo</option>
+                <option selected value="">Selecione...</option>
+                <option value="Celular">Celular</option>
+                <option value="Fixo">Fixo</option>
             </select>
-           </div>
-    <div class="form-group">
-        <label class="texto">Pessoas cadastradas:</label>
-        <select name="id_pessoa" class="form-control">
-            <option selected value="">Selecione...</option>
-            @foreach (CadastroPessoas.Models.Pessoa item in ViewBag.tel)
-            {
+        </div>
+            <div class="form-group">
+                <label class="texto">Pessoas cadastradas:</label>
+                <select name="id_pessoa" class="form-control">
+                    <option selected value="">Selecione...</option>
+                    @foreach (CadastroPessoas.Models.Pessoa item in ViewBag.tel)
+                    {
 
-                <option value="@item.id">@item.nome</option>
+                        <option value="@item.id">@item.nome</option>
 
-            }
-        </select>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <input type="submit" value="Adicionar" class="btn btn-primary" />
-    </div>
-    </form>
-</div>
 </div>
 
 <div>
