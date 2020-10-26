@@ -1,0 +1,84 @@
+﻿@model IEnumerable<CadastroPessoas.Models.Pessoa>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Register People</h1>
+
+<table>
+    <thead>
+    <th>
+        <p>
+            <a class="btn btn-success create" asp-action="CriarPessoa">Cadastrar nova pessoa</a>
+        </p>
+    </th>
+    <th>
+        
+        <p>
+            <button type="button" class="btn btn-outline-primary">
+                @Html.ActionLink("Cadastrar Telefone", "CriarTelefone", "Telefones", null)
+            </button>
+        </p>
+            
+    </th>
+</table>
+@using (Html.BeginForm())
+{
+    <p>
+        Procura por Nome: @Html.TextBox("SearchString")
+        <input class="btn btn-outline-secondary" type="submit" value="busca" />
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salario)
+            </th>
+            <th>
+                Telefone
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salario)
+            </td>
+
+            <td>
+                <button type="button" class="btn btn-outline-primary">
+                    @Html.ActionLink("Ver Telefone", "DetalhesTelefone", "Telefones", new { id = item.id }, null)
+                </button>
+            </td>
+            <td>
+
+                <a class="btn btn-success" asp-action="AtualizarPessoa" asp-route-id="@item.id">Atualizar</a> 
+                <a class="btn btn-danger" asp-action="ExcluirPessoa" asp-route-id="@item.id">Excluir</a>
+                <a class="btn btn-info" asp-action="DetalhesPessoa" asp-route-id="@item.id">Detalhes</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

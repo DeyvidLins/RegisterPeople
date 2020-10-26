@@ -1,0 +1,34 @@
+﻿@model CadastroPessoas.Models.Pessoa
+
+@{
+    ViewData["Title"] = "DetalhesPessoa";
+}
+
+<div class="container">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Dados Pessoais</h4>
+            </div>
+            <div class="modal-body">
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>@Html.DisplayNameFor(model => model.nome)</dt>
+                    <dd>@Html.DisplayFor(model => model.nome)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.dataNascimento)</dt>
+                    <dd>@Html.DisplayFor(model => model.dataNascimento)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.salario)</dt>
+                    <dd>@Html.DisplayFor(model => model.salario)</dd>
+                    
+                </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal"> @Html.ActionLink("Sair", "Index")</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<p>
+    @Html.ActionLink("Atualizar", "AtualizarPessoa", new { id = Model.id }) |
+    @Html.ActionLink("Retornar para a Lista", "Index")
+</p>

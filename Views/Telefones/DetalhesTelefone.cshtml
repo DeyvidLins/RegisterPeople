@@ -1,0 +1,38 @@
+﻿@model CadastroPessoas.Models.Telefone
+
+@{
+    ViewData["Title"] = "DetalhesTelefone";
+}
+
+
+
+<div class="container">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Lista de Telefones</h4>
+                
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.info</div>
+                                <hr />
+                                <dl class="dl-horizontal">
+                                    <dt>@Html.DisplayNameFor(model => model.numero)</dt>
+                                    <dd>@Html.DisplayFor(model => model.numero)</dd>
+                                    <dt>@Html.DisplayNameFor(model => model.tipo)</dt>
+                                    <dd>@Html.DisplayFor(model => model.tipo)</dd>
+
+                                </dl>
+                            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal"> @Html.ActionLink("Sair", "Index")</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<p>
+    @Html.ActionLink("Excluir", "ExcluirTelefone", new { id = Model.id }) |
+    @Html.ActionLink("Atualizar", "AtualizarTelefone", new { id = Model.id }) |
+    @Html.ActionLink("Retornar para a Lista", "")
+</p>

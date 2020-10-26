@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CadastroPessoas.Models.Telefone>
+
+@{
+    ViewData["Title"] = "Lista de Telefones";
+}
+
+<h1>Lista de Telefones</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="telefone-@item.id">
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.numero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipo)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <button type="button" class="btn btn-outline-primary">
+        @Html.ActionLink("Voltar", "localhost:44385", null)
+    </button>
+</p>
