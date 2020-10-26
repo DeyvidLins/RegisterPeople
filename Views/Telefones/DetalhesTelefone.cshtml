@@ -26,7 +26,7 @@
                                 </dl>
                             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger" data-dismiss="modal"> @Html.ActionLink("Sair", "Index")</button>
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal"> <a href="https://localhost:44385/">Sair</a></button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -34,5 +34,5 @@
 <p>
     @Html.ActionLink("Excluir", "ExcluirTelefone", new { id = Model.id }) |
     @Html.ActionLink("Atualizar", "AtualizarTelefone", new { id = Model.id }) |
-    @Html.ActionLink("Retornar para a Lista", "")
+    
 </p>
