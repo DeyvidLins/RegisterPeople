@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CadastroPessoas.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20201026182614_initial02")]
-    partial class initial02
+    [Migration("20201028142257_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

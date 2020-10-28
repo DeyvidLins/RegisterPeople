@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CadastroPessoas.Migrations
@@ -14,7 +15,7 @@ namespace CadastroPessoas.Migrations
                     id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     nome = table.Column<string>(type: "varchar(120)", nullable: false),
-                    dataNascimento = table.Column<string>(type: "varchar(20)", nullable: false),
+                    dataNascimento = table.Column<DateTime>(nullable: false),
                     salario = table.Column<decimal>(type: "money", nullable: false)
                 },
                 constraints: table =>
